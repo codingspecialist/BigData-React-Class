@@ -1,10 +1,17 @@
-function App() {
-  const user = fetch("http://localhost:8080/user/1");
+import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
+import { Route } from "react-router-dom";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import UserPage from "./pages/UserPage";
+import { Button } from "antd";
 
+function App() {
   return (
     <div>
-      Hello World
-      <h1>{user}</h1>
+      <Header />
+      <Route path="/" exact={true} component={HomePage} />
+      <Route path="/user" exact={true} component={UserPage} />
     </div>
   );
 }
